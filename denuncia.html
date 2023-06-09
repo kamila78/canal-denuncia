@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Faça sua Denúncia</title>
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .container h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .form-group textarea {
+      height: 100px;
+    }
+
+    .form-group .anonymous-checkbox {
+      margin-top: 10px;
+      
+    }
+
+    .form-group .file-input {
+      margin-top: 10px;
+    }
+
+    .form-group .submit-button {
+      margin-top: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+      <div class="container">
+    <h2 style="background-color:black;color:white">Denuncie!</h2>
+    <form action="processar_denuncia.php" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+      <div class="form-group">
+        <label for="bloco">Bloco:</label>
+        <input type="text" id="bloco" name="bloco" required>
+      </div>
+      <div class="form-group">
+        <label for="apartamento">Apartamento:</label>
+        <input type="text" id="apartamento" name="apartamento" required>
+      </div>
+      <div class="form-group">
+        <label for="denuncia">Denúncia:</label>
+        <textarea id="denuncia" name="denuncia" required></textarea>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="anonimo" name="anonimo" class="anonymous-checkbox">
+        <label for="anonimo", style="color: red; "><b>Desejo fazer a denúncia de forma anônima</b></label>
+      </div>
+      <div class="form-group">
+        <label for="evidencias">Evidências:</label>
+        <input type="file" id="evidencias" name="evidencias[]" class="file-input" multiple>
+      </div>
+      <div class="form-group submit-button,">
+        <input type="submit" value="Enviar Denúncia">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
